@@ -21,7 +21,7 @@ const Section = ({ classes, children, title }) => (
   <section id={id(title)} className={classes.section}>
     <Container>
       <Container
-        itemProps={{ xs: 6, sm: 4, md: 4, lg: 2, xl: 2 }}
+        itemProps={{ xs: 6, sm: 4, md: 4, lg: 3, xl: 3 }}
         containerClassName={classes.titleContainer}
       >
         <Typography component="h3" variant="h4" align="center" gutterBottom>

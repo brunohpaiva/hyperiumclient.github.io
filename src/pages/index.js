@@ -10,6 +10,7 @@ import Jumbotron from '../components/Jumbotron';
 
 import ModsSection from '../components/sections/ModsSection';
 import FeaturesSection from '../components/sections/FeaturesSection';
+import PrivacyPolicySection from '../components/sections/PrivacyPolicySection';
 
 const styles = theme => ({
   jumbotron: {
@@ -58,6 +59,7 @@ const IndexPage = ({ classes }) => (
 
     <ModsSection />
     <FeaturesSection />
+    <PrivacyPolicySection />
   </Layout>
 );
 

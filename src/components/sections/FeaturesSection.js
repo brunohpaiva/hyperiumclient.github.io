@@ -68,6 +68,7 @@ const FeaturesSection = ({ classes }) => (
 FeaturesSection.propTypes = {
   classes: PropTypes.shape({
     paper: PropTypes.string.isRequired,
+    mb: PropTypes.string.isRequired,
   }),
 };
 
