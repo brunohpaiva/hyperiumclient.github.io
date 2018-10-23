@@ -48,6 +48,11 @@ const mods = [
       'Custom Crosshair allows you to change the style, thickness, size and color of the crosshair.',
   },
   {
+    name: 'Custom Reach Display Mod',
+    description:
+      'Hyperium Reach Display Mod is an exclusive mod that adds the distance of the hits directly in the world where they happened.',
+  },
+  {
     name: 'Fortnite Compass Mod',
     description:
       'Fortnite Compass Mod adds a bar at the top of your screen indicating the direction you are facing.',
@@ -78,6 +83,11 @@ const mods = [
       'OldAnimations is a Minecraft Mod to turn back Minecraft 1.7 animations.',
   },
   {
+    name: 'Orange Marshall Vanilla Enchantments',
+    description:
+      'Orange Marshall Vanilla Enhancements adds enchantments to several key parts of the game.',
+  },
+  {
     name: 'PerspectiveMod 1.0',
     description:
       'PerspectiveMod is a Minecraft Mod that allows you to view your character in at any angle by modifying camera placement.',
@@ -88,19 +98,9 @@ const mods = [
       'SidebarMod is a Minecraft Mod that allows you to edit the scoreboard placement and size.',
   },
   {
-    name: 'Custom Reach Display Mod',
-    description:
-      'Hyperium Reach Display Mod is an exclusive mod that adds the distance of the hits directly in the world where they happened.',
-  },
-  {
     name: 'ToggleChat 1.0',
     description:
       'ToggleChat is a Minecraft Mod that allows you to toggle the visibility of specific chat messages on the Hypixel Network.',
-  },
-  {
-    name: 'Orange Marshall Vanilla Enchantments',
-    description:
-      'Orange Marshall Vanilla Enhancements adds enchantments to several key parts of the game.',
   },
 ];
 
