@@ -1,18 +1,15 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
+import hyperiumLargeLogo from '../images/hyperium-large.png';
 import Container from './Container';
 
 const styles = theme => ({
-  root: {
-    flexGrow: 1,
-  },
   toolbar: {
     transition: 'min-height linear 200ms',
   },
@@ -21,7 +18,7 @@ const styles = theme => ({
       display: 'none',
     },
   },
-  title: {
+  grow: {
     flexGrow: 1,
   },
 });
@@ -32,7 +29,6 @@ const Navbar = ({
   color,
   elevation,
   toolbarVariant,
-  title,
   children,
   handleSidebarToggle,
 }) => (
@@ -54,9 +50,8 @@ const Navbar = ({
         >
           <MenuIcon />
         </IconButton>
-        <Typography variant="h6" color="inherit" className={classes.title}>
-          {title}
-        </Typography>
+        <img src={hyperiumLargeLogo} height="32" />
+        <div className={classes.grow} />
         {children}
       </Toolbar>
     </Container>
@@ -65,14 +60,15 @@ const Navbar = ({
 
 Navbar.propTypes = {
   classes: PropTypes.shape({
-    root: PropTypes.string.isRequired,
     toolbar: PropTypes.string.isRequired,
+    navIconHide: PropTypes.string.isRequired,
+    grow: PropTypes.string.isRequired,
   }),
   position: PropTypes.string,
   color: PropTypes.string,
   elevation: PropTypes.number,
   toolbarVariant: PropTypes.string,
-  title: PropTypes.string.isRequired,
+  grow: PropTypes.string.isRequired,
   children: PropTypes.node,
   handleSidebarToggle: PropTypes.func,
 };

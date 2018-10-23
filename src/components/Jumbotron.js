@@ -8,7 +8,6 @@ import Container from '../components/Container';
 const styles = theme => ({
   jumbotron: {
     backgroundColor: theme.palette.background.paper,
-    marginTop: '-24px',
     padding: `${theme.spacing.unit * 5}px 0 ${theme.spacing.unit * 5}px`,
   },
   jumbotronContent: theme.mixins.gutters(),

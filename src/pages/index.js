@@ -13,6 +13,10 @@ const styles = theme => ({
     backgroundImage: 'url(https://hyperium.cc/images/mc-cinematic-blured.png)',
     backgroundAttachment: 'fixed',
     backgroundPositionY: '-140px',
+    marginTop: '-24px',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '-32px',
+    },
   },
   textWhite: {
     color: theme.palette.background.paper,

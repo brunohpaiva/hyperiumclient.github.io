@@ -83,7 +83,6 @@ class Layout extends React.Component {
           <React.Fragment>
             <Helmet title={data.site.siteMetadata.title} />
             <Navbar
-              title={data.site.siteMetadata.title}
               position="fixed"
               toolbarVariant={toolbarVariant}
               handleSidebarToggle={this.handleSidebarToggle}
