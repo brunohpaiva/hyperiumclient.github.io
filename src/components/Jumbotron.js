@@ -15,11 +15,9 @@ const styles = theme => ({
 
 const Jumbotron = ({ classes, children, className }) => (
   <Container
-    containerProps={{
-      className: classnames(classes.jumbotron, className),
-    }}
+    containerClassName={classnames(classes.jumbotron, className)}
+    itemClassName={classes.jumbotronContent}
     itemProps={{
-      className: classes.jumbotronContent,
       xs: 12,
       md: 6,
       xl: 4,

@@ -8,6 +8,8 @@ import PropTypes from 'prop-types';
 import Layout from '../components/Layout';
 import Jumbotron from '../components/Jumbotron';
 
+import ModsSection from '../components/sections/ModsSection';
+
 const styles = theme => ({
   jumbotron: {
     backgroundImage: 'url(https://hyperium.cc/images/mc-cinematic-blured.png)',
@@ -36,7 +38,7 @@ const IndexPage = ({ classes }) => (
         Hyperium
       </Typography>
       <Typography
-        component="h6"
+        component="h2"
         variant="h6"
         align="center"
         gutterBottom
@@ -52,6 +54,8 @@ const IndexPage = ({ classes }) => (
         </Grid>
       </Grid>
     </Jumbotron>
+
+    <ModsSection />
   </Layout>
 );
 

@@ -21,6 +21,9 @@ const styles = theme => ({
   grow: {
     flexGrow: 1,
   },
+  containerItem: {
+    padding: 0,
+  },
 });
 
 const Navbar = ({
@@ -37,7 +40,7 @@ const Navbar = ({
     color={color || 'default'}
     elevation={elevation || 4}
   >
-    <Container>
+    <Container itemClassName={classes.containerItem}>
       <Toolbar
         className={classes.toolbar}
         variant={toolbarVariant || 'regular'}
@@ -68,7 +71,6 @@ Navbar.propTypes = {
   color: PropTypes.string,
   elevation: PropTypes.number,
   toolbarVariant: PropTypes.string,
-  grow: PropTypes.string.isRequired,
   children: PropTypes.node,
   handleSidebarToggle: PropTypes.func,
 };
