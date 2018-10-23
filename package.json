@@ -1,0 +1,58 @@
+{
+  "name": "hyperiumclient.github.io",
+  "description": "Hyperium website",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "react",
+    "material",
+    "material-design"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HyperiumClient/hyperiumclient.github.io"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "start": "gatsby develop",
+    "lint": "eslint . --fix",
+    "format": "prettier --trailing-comma es5 --single-quote --write src/**/*.js"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.2.0",
+    "@material-ui/icons": "^3.0.1",
+    "gatsby": "2.0.6",
+    "gatsby-plugin-google-analytics": "^2.0.6",
+    "gatsby-plugin-manifest": "^2.0.4",
+    "gatsby-plugin-offline": "2.0.5",
+    "gatsby-plugin-react-helmet": "3.0.0",
+    "gatsby-plugin-sitemap": "^2.0.1",
+    "jss": "^9.8.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-helmet": "^5.2.0",
+    "react-jss": "^8.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.1",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.1.2",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "npm run format",
+      "git add"
+    ]
+  }
+}
