@@ -9,6 +9,7 @@ import Layout from '../components/Layout';
 import Jumbotron from '../components/Jumbotron';
 
 import ModsSection from '../components/sections/ModsSection';
+import FeaturesSection from '../components/sections/FeaturesSection';
 
 const styles = theme => ({
   jumbotron: {
@@ -56,6 +57,7 @@ const IndexPage = ({ classes }) => (
     </Jumbotron>
 
     <ModsSection />
+    <FeaturesSection />
   </Layout>
 );
 
