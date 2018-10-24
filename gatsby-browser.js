@@ -18,3 +18,5 @@ exports.onClientEntry = () => {
   linkIcons.setAttribute('href', pathIcons);
   document.head.appendChild(linkIcons);
 };
+
+exports.shouldUpdateScroll = () => false;
