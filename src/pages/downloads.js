@@ -92,7 +92,7 @@ class DownloadsPage extends React.Component {
     const { classes, data } = this.props;
     const { universalInstaller, hyperiumLatestVersion } = this.state;
     return (
-      <Layout>
+      <Layout location={this.props.location}>
         <Jumbotron className={classes.jumbotron}>
           <Typography
             component="h1"
@@ -158,6 +158,9 @@ DownloadsPage.propTypes = {
       }).isRequired,
     }).isRequired,
   }).isRequired,
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }),
 };
 
 export const query = graphql`

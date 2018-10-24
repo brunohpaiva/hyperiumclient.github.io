@@ -5,7 +5,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
-import { StaticQuery, graphql, Link } from 'gatsby';
+import { StaticQuery, graphql, Link as GatsbyLink } from 'gatsby';
+import { Link as ScrollLink } from 'react-scroll';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
@@ -72,6 +73,19 @@ class Layout extends React.Component {
   handleSidebarToggle = () =>
     this.setState({ sidebarOpen: !this.state.sidebarOpen });
 
+  createLinkComponent = path => props =>
+    this.props.location.pathname !== '/' ? (
+      <GatsbyLink to={path} {...props} />
+    ) : (
+      <ScrollLink
+        to={path.substring(path.indexOf('#') + 1)}
+        smooth
+        duration={500}
+        offset={-15}
+        {...props}
+      />
+    );
+
   render() {
     const { children, classes } = this.props;
     const { scrollTop, sidebarOpen } = this.state;
@@ -88,15 +102,27 @@ class Layout extends React.Component {
               handleSidebarToggle={this.handleSidebarToggle}
             >
               <div className={classes.navbarMenu}>
-                <Button>Home</Button>
-                <Button>Mods</Button>
-                <Button>Features</Button>
-                <Button>Privacy</Button>
-                <Button>Contact</Button>
+                <Button component={this.createLinkComponent('/#home')}>
+                  Home
+                </Button>
+                <Button component={this.createLinkComponent('/#mods')}>
+                  Mods
+                </Button>
+                <Button component={this.createLinkComponent('/#features')}>
+                  Features
+                </Button>
+                <Button
+                  component={this.createLinkComponent('/#privacy-policy')}
+                >
+                  Privacy
+                </Button>
+                <Button component={this.createLinkComponent('/#contact')}>
+                  Contact
+                </Button>
                 <Button
                   variant="contained"
                   color="primary"
-                  component={Link}
+                  component={GatsbyLink}
                   to="/downloads"
                 >
                   Downloads
@@ -106,22 +132,37 @@ class Layout extends React.Component {
             <Hidden smUp>
               <Sidebar open={sidebarOpen} onClose={this.handleSidebarToggle}>
                 <List>
-                  <ListItem button>
+                  <ListItem
+                    button
+                    component={this.createLinkComponent('/#home')}
+                  >
                     <ListItemText primary="Home" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem
+                    button
+                    component={this.createLinkComponent('/#mods')}
+                  >
                     <ListItemText primary="Mods" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem
+                    button
+                    component={this.createLinkComponent('/#features')}
+                  >
                     <ListItemText primary="Features" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem
+                    button
+                    component={this.createLinkComponent('/#privacy-policy')}
+                  >
                     <ListItemText primary="Privacy Policy" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem
+                    button
+                    component={this.createLinkComponent('/#contact')}
+                  >
                     <ListItemText primary="Contact" />
                   </ListItem>
-                  <ListItem button component={Link} to="/downloads">
+                  <ListItem button component={GatsbyLink} to="/downloads">
                     <ListItemText primary="Downloads" />
                   </ListItem>
                 </List>
@@ -139,6 +180,9 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   classes: PropTypes.shape({
     navbarMenu: PropTypes.string.isRequired,
+  }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
   }),
 };
 

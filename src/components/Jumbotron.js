@@ -13,7 +13,7 @@ const styles = theme => ({
   jumbotronContent: theme.mixins.gutters(),
 });
 
-const Jumbotron = ({ classes, children, className }) => (
+const Jumbotron = ({ classes, children, className, ...props }) => (
   <Container
     containerClassName={classnames(classes.jumbotron, className)}
     itemClassName={classes.jumbotronContent}
@@ -22,6 +22,7 @@ const Jumbotron = ({ classes, children, className }) => (
       md: 6,
       xl: 4,
     }}
+    {...props}
   >
     {children}
   </Container>

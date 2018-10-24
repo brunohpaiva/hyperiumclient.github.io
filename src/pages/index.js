@@ -31,9 +31,9 @@ const styles = theme => ({
   },
 });
 
-const IndexPage = ({ classes }) => (
-  <Layout>
-    <Jumbotron className={classes.jumbotron}>
+const IndexPage = ({ classes, location }) => (
+  <Layout location={location}>
+    <Jumbotron className={classes.jumbotron} containerProps={{ id: 'home' }}>
       <Typography
         component="h1"
         variant="h2"
@@ -78,6 +78,9 @@ IndexPage.propTypes = {
   classes: PropTypes.shape({
     jumbotron: PropTypes.string.isRequired,
     textWhite: PropTypes.string.isRequired,
+  }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
   }),
 };
 
