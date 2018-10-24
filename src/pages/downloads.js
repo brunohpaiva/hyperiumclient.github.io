@@ -55,6 +55,10 @@ class DownloadsPage extends React.Component {
     this.fetchLatestHyperiumVersion();
   }
 
+  componentWillUnmount() {
+    this.willUnmout = true;
+  }
+
   fetchLatestUniversalInstallerVersion() {
     fetch(this.props.data.site.siteMetadata.universalInstallerLatestReleaseApi)
       .then(r => r.json())
@@ -63,29 +67,33 @@ class DownloadsPage extends React.Component {
           asset => !asset.name.toLowerCase().includes('sources')
         )[0];
 
-        this.setState({
-          universalInstaller: {
-            version: `${release.tag_name} of ${formatDate(
-              new Date(release.published_at)
-            )}`,
-            downloadUrl: asset.browser_download_url,
-            changelogItems: release.body.split('\n'),
-          },
-        });
+        if (!this.willUnmout) {
+          this.setState({
+            universalInstaller: {
+              version: `${release.tag_name} of ${formatDate(
+                new Date(release.published_at)
+              )}`,
+              downloadUrl: asset.browser_download_url,
+              changelogItems: release.body.split('\n'),
+            },
+          });
+        }
       });
   }
 
   fetchLatestHyperiumVersion() {
     fetch(this.props.data.site.siteMetadata.hyperiumVersionsApi)
       .then(r => r.json())
-      .then(versions =>
-        this.setState({
-          hyperiumLatestVersion: {
-            version: `${versions.latest.build} build ${versions.latest.id}`,
-            downloadUrl: versions.latest.url,
-          },
-        })
-      );
+      .then(versions => {
+        if (!this.willUnmout) {
+          this.setState({
+            hyperiumLatestVersion: {
+              version: `${versions.latest.build} build ${versions.latest.id}`,
+              downloadUrl: versions.latest.url,
+            },
+          });
+        }
+      });
   }
 
   render() {

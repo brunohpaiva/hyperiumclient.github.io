@@ -73,6 +73,10 @@ class ContributorsSection extends React.Component {
     this.fetchContributors();
   }
 
+  componentWillUnmount() {
+    this.willUnmout = true;
+  }
+
   fetchContributors() {
     fetch(this.props.apiUrl)
       .then(r => r.json())
@@ -84,7 +88,9 @@ class ContributorsSection extends React.Component {
         const filteredContributors = contributors.filter(
           contributor => contributor.contributions >= arithmeticAverage
         );
-        this.setState({ contributors: filteredContributors });
+        if (!this.willUnmout) {
+          this.setState({ contributors: filteredContributors });
+        }
       });
   }
 
