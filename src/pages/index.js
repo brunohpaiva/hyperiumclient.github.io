@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'gatsby';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout';
@@ -26,6 +27,9 @@ const styles = theme => ({
       marginTop: '-32px',
     },
   },
+  pageTitle: {
+    fontWeight: 400,
+  },
   textWhite: {
     color: theme.palette.background.paper,
   },
@@ -39,7 +43,7 @@ const IndexPage = ({ classes, location }) => (
         variant="h2"
         align="center"
         gutterBottom
-        className={classes.textWhite}
+        className={classnames(classes.pageTitle, classes.textWhite)}
       >
         Hyperium
       </Typography>

@@ -29,8 +29,9 @@ const styles = theme => ({
       marginTop: '-32px',
     },
   },
-  textWhite: {
+  pageTitle: {
     color: theme.palette.background.paper,
+    fontWeight: 400,
   },
   container: {
     padding: `${theme.spacing.unit * 6}px 0 ${theme.spacing.unit * 3}px`,
@@ -106,7 +107,7 @@ class DownloadsPage extends React.Component {
             component="h1"
             variant="h2"
             align="center"
-            className={classes.textWhite}
+            className={classes.pageTitle}
           >
             Downloads
           </Typography>
@@ -152,7 +153,7 @@ class DownloadsPage extends React.Component {
 DownloadsPage.propTypes = {
   classes: PropTypes.shape({
     jumbotron: PropTypes.string.isRequired,
-    textWhite: PropTypes.string.isRequired,
+    pageTitle: PropTypes.string.isRequired,
     container: PropTypes.string.isRequired,
   }),
   data: PropTypes.shape({
