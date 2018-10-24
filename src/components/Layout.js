@@ -5,7 +5,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
@@ -91,9 +91,14 @@ class Layout extends React.Component {
                 <Button>Home</Button>
                 <Button>Mods</Button>
                 <Button>Features</Button>
-                <Button>Privacy Policy</Button>
+                <Button>Privacy</Button>
                 <Button>Contact</Button>
-                <Button variant="contained" color="primary">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  component={Link}
+                  to="/downloads"
+                >
                   Downloads
                 </Button>
               </div>
@@ -116,7 +121,7 @@ class Layout extends React.Component {
                   <ListItem button>
                     <ListItemText primary="Contact" />
                   </ListItem>
-                  <ListItem button>
+                  <ListItem button component={Link} to="/downloads">
                     <ListItemText primary="Downloads" />
                   </ListItem>
                 </List>

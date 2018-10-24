@@ -2,6 +2,14 @@ module.exports = {
   siteMetadata: {
     title: 'Hyperium',
     siteUrl: 'https://hyperium.cc',
+    projectContributorsApi:
+      'https://api.github.com/repos/HyperiumClient/Hyperium/contributors',
+    universalInstallerLatestReleaseApi:
+      'https://api.github.com/repos/HyperiumClient/Installer/releases/latest',
+    hyperiumVersionsApi: 'https://api.hyperium.cc/versions',
+    texturePackUrl: 'http://bit.ly/HyperiumPack',
+    addonWorkspaceUrl:
+      'https://github.com/HyperiumClient/Addon-Workspace/archive/master.zip',
   },
   plugins: [
     'gatsby-plugin-react-helmet',

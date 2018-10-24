@@ -8,11 +8,9 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import { StaticQuery, graphql } from 'gatsby';
 
 import Section from '../Section';
-
-const CONTRIBUTORS_URL =
-  'https://api.github.com/repos/HyperiumClient/Hyperium/contributors';
 
 const contributorStyles = () => ({
   title: {
@@ -76,7 +74,7 @@ class ContributorsSection extends React.Component {
   }
 
   fetchContributors() {
-    fetch(CONTRIBUTORS_URL)
+    fetch(this.props.apiUrl)
       .then(r => r.json())
       .then(contributors => {
         const totalContributions = contributors
@@ -91,19 +89,39 @@ class ContributorsSection extends React.Component {
   }
 
   render() {
-    const contributors = this.state.contributors;
+    const contributors = this.state.contributors.map(contributor => (
+      <Grid item key={contributor.id} xs={6} sm={4} md={3} lg={2}>
+        <Contributor contributor={contributor} />
+      </Grid>
+    ));
     return (
       <Section title="Contributors">
         <Grid container spacing={16}>
-          {contributors.map(contributor => (
-            <Grid item key={contributor.id} xs={6} sm={4} md={3} lg={2}>
-              <Contributor contributor={contributor} />
-            </Grid>
-          ))}
+          {contributors}
         </Grid>
       </Section>
     );
   }
 }
 
-export default ContributorsSection;
+ContributorsSection.propTypes = {
+  apiUrl: PropTypes.string.isRequired,
+};
+
+const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        projectContributorsApi
+      }
+    }
+  }
+`;
+
+const RenderSection = data => (
+  <ContributorsSection apiUrl={data.site.siteMetadata.projectContributorsApi} />
+);
+
+const Component = () => <StaticQuery query={query} render={RenderSection} />;
+
+export default Component;

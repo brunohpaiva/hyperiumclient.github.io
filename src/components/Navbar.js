@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import hyperiumLargeLogo from '../images/hyperium-large.png';
@@ -23,6 +24,15 @@ const styles = theme => ({
   },
   containerItem: {
     padding: 0,
+  },
+  titleLink: {
+    lineHeight: '32px',
+  },
+  titleImg: {
+    margin: 'auto',
+    verticalAlign: 'middle',
+    display: 'inline-block',
+    height: '32px',
   },
 });
 
@@ -53,7 +63,9 @@ const Navbar = ({
         >
           <MenuIcon />
         </IconButton>
-        <img src={hyperiumLargeLogo} height="32" />
+        <Link to="/" className={classes.titleLink}>
+          <img src={hyperiumLargeLogo} className={classes.titleImg} />
+        </Link>
         <div className={classes.grow} />
         {children}
       </Toolbar>
@@ -66,6 +78,8 @@ Navbar.propTypes = {
     toolbar: PropTypes.string.isRequired,
     navIconHide: PropTypes.string.isRequired,
     grow: PropTypes.string.isRequired,
+    titleLink: PropTypes.string.isRequired,
+    titleImg: PropTypes.string.isRequired,
   }),
   position: PropTypes.string,
   color: PropTypes.string,

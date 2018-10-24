@@ -3,20 +3,22 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Layout from '../components/Layout';
 import Jumbotron from '../components/Jumbotron';
-
 import ModsSection from '../components/sections/ModsSection';
 import FeaturesSection from '../components/sections/FeaturesSection';
 import PrivacyPolicySection from '../components/sections/PrivacyPolicySection';
 import ContactSection from '../components/sections/ContactSection';
 import ContributorsSection from '../components/sections/ContributorsSection';
 
+import cinematicBluredImage from '../images/mc-cinematic-blured.png';
+
 const styles = theme => ({
   jumbotron: {
-    backgroundImage: 'url(https://hyperium.cc/images/mc-cinematic-blured.png)',
+    backgroundImage: `url(${cinematicBluredImage})`,
     backgroundAttachment: 'fixed',
     backgroundPositionY: '-140px',
     marginTop: '-24px',
@@ -52,7 +54,12 @@ const IndexPage = ({ classes }) => (
       </Typography>
       <Grid container spacing={16} justify="center">
         <Grid item>
-          <Button variant="contained" color="primary">
+          <Button
+            variant="contained"
+            color="primary"
+            component={Link}
+            to="/downloads"
+          >
             Downloads
           </Button>
         </Grid>
