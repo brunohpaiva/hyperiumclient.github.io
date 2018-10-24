@@ -6,6 +6,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
 import Section from '../Section';
@@ -13,32 +14,50 @@ import Section from '../Section';
 const CONTRIBUTORS_URL =
   'https://api.github.com/repos/HyperiumClient/Hyperium/contributors';
 
-const Contributor = ({ contributor }) => (
-  <Card>
-    <CardMedia
-      component="img"
-      alt={`${contributor.login}'s github avatar'`}
-      height="140"
-      image={contributor.avatar_url}
-      title={`${contributor.login}'s github avatar'`}
-    />
-    <CardContent>
-      <Typography gutterBottom variant="h5" component="h2">
-        {contributor.login}
-      </Typography>
-      <Typography component="p">
-        Contributions: {contributor.contributions}
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small" color="primary" href={contributor.html_url}>
-        GitHub
-      </Button>
-    </CardActions>
-  </Card>
+const contributorStyles = () => ({
+  title: {
+    overflow: 'hidden',
+    whiteSpace: 'nowrap',
+    textOverflow: 'ellipsis',
+  },
+});
+
+const Contributor = withStyles(contributorStyles)(
+  ({ classes, contributor }) => (
+    <Card>
+      <CardMedia
+        component="img"
+        alt={`${contributor.login}'s github avatar'`}
+        height="140"
+        image={contributor.avatar_url}
+        title={`${contributor.login}'s github avatar'`}
+      />
+      <CardContent>
+        <Typography
+          gutterBottom
+          variant="h5"
+          component="h2"
+          className={classes.title}
+        >
+          {contributor.login}
+        </Typography>
+        <Typography component="p">
+          Contributions: {contributor.contributions}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button size="small" color="primary" href={contributor.html_url}>
+          GitHub
+        </Button>
+      </CardActions>
+    </Card>
+  )
 );
 
 Contributor.propTypes = {
+  classes: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+  }),
   contributor: PropTypes.shape({
     login: PropTypes.string.isRequired,
     avatar_url: PropTypes.string.isRequired,
@@ -77,7 +96,7 @@ class ContributorsSection extends React.Component {
       <Section title="Contributors">
         <Grid container spacing={16}>
           {contributors.map(contributor => (
-            <Grid item xs={3} key={contributor.id}>
+            <Grid item key={contributor.id} xs={6} sm={4} md={3} lg={2}>
               <Contributor contributor={contributor} />
             </Grid>
           ))}

@@ -17,7 +17,7 @@ const styles = theme => ({
 const PrivacyPolicySection = ({ classes }) => (
   <Section title="Privacy Policy">
     <Grid container spacing={16}>
-      <Grid item md={6}>
+      <Grid item xs={12} md={6}>
         <Paper className={classes.paper} elevation={1}>
           <Typography variant="h5" component="h3">
             What data does Hyperium Collect?
@@ -34,7 +34,7 @@ const PrivacyPolicySection = ({ classes }) => (
           </Typography>
         </Paper>
       </Grid>
-      <Grid item md={6}>
+      <Grid item xs={12} md={6}>
         <Paper className={classes.paper} elevation={1}>
           <Typography variant="h5" component="h3">
             What we do with the data

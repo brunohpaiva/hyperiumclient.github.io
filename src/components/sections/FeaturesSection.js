@@ -21,7 +21,7 @@ const styles = theme => ({
 const FeaturesSection = ({ classes }) => (
   <Section title="Features">
     <Grid container spacing={16}>
-      <Grid item md={6}>
+      <Grid item xs={12} md={6}>
         <Paper className={classnames(classes.paper, classes.mb)} elevation={1}>
           <Typography variant="h5" component="h3">
             Performance Enchantments
@@ -42,7 +42,7 @@ const FeaturesSection = ({ classes }) => (
           </Typography>
         </Paper>
       </Grid>
-      <Grid item md={6}>
+      <Grid item xs={12} md={6}>
         <Paper className={classnames(classes.paper, classes.mb)} elevation={1}>
           <Typography variant="h5" component="h3">
             Cosmetics

@@ -169,10 +169,10 @@ const ModsSection = () => {
   return (
     <Section title="Mods">
       <Grid container spacing={16}>
-        <Grid item md={6}>
+        <Grid item xs={12} md={6}>
           {arrayOne}
         </Grid>
-        <Grid item md={6}>
+        <Grid item xs={12} md={6}>
           {arrayTwo}
         </Grid>
       </Grid>
