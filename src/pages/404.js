@@ -10,8 +10,8 @@ const styles = theme => ({
   item: theme.mixins.gutters(),
 });
 
-const NotFoundPage = ({ classes }) => (
-  <Layout>
+const NotFoundPage = ({ classes, location }) => (
+  <Layout location={location}>
     <Container itemProps={{ className: classes.item }}>
       <Typography variant="h2" gutterBottom>
         NOT FOUND
@@ -26,6 +26,9 @@ const NotFoundPage = ({ classes }) => (
 NotFoundPage.propTypes = {
   classes: PropTypes.shape({
     item: PropTypes.string.isRequired,
+  }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
   }),
 };
 
