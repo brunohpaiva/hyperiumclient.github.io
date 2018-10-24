@@ -12,6 +12,9 @@ import { StaticQuery, graphql } from 'gatsby';
 
 import Section from '../Section';
 
+const sumContributions = contributors =>
+  contributors.map(c => c.contributions).reduce((p, n) => p + n);
+
 const contributorStyles = () => ({
   title: {
     overflow: 'hidden',
@@ -81,10 +84,8 @@ class ContributorsSection extends React.Component {
     fetch(this.props.apiUrl)
       .then(r => r.json())
       .then(contributors => {
-        const totalContributions = contributors
-          .map(contributor => contributor.contributions)
-          .reduce((prev, next) => prev + next);
-        const arithmeticAverage = totalContributions / contributors.length;
+        const arithmeticAverage =
+          sumContributions(contributors) / contributors.length;
         const filteredContributors = contributors.filter(
           contributor => contributor.contributions >= arithmeticAverage
         );

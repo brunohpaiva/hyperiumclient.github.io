@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Hyperium',
     siteUrl: 'https://hyperium.cc',
+    copyrightText: 'Copyright © 2018 Sk1er LLC.',
     projectContributorsApi:
       'https://api.github.com/repos/HyperiumClient/Hyperium/contributors',
     universalInstallerLatestReleaseApi:

@@ -13,12 +13,14 @@ import Helmet from 'react-helmet';
 import withRoot from '../withRoot';
 import Navbar from './Navbar';
 import Sidebar from './Sidebar';
+import Footer from './Footer';
 
 const query = graphql`
   query SiteTitleQuery {
     site {
       siteMetadata {
         title
+        copyrightText
       }
     }
   }
@@ -169,6 +171,7 @@ class Layout extends React.Component {
               </Sidebar>
             </Hidden>
             <div className={classes.content}>{children}</div>
+            <Footer copyrightText={data.site.siteMetadata.copyrightText} />
           </React.Fragment>
         )}
       />
