@@ -106,7 +106,6 @@ class DownloadsPage extends React.Component {
             component="h1"
             variant="h2"
             align="center"
-            gutterBottom
             className={classes.textWhite}
           >
             Downloads
