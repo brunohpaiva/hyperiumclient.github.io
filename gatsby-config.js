@@ -25,7 +25,7 @@ module.exports = {
         background_color: '#000',
         theme_color: '#000',
         display: 'minimal-ui',
-        icon: 'src/images/favicon.png',
+        icon: 'src/images/hyperium-logo.png',
       },
     },
     {

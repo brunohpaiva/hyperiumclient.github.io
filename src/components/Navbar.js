@@ -1,20 +1,22 @@
 import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import hyperiumLargeLogo from '../images/hyperium-large.png';
+import hyperiumLogo from '../images/hyperium-logo.png';
 import Container from './Container';
 
 const styles = theme => ({
   toolbar: {
     transition: 'min-height linear 200ms',
   },
-  navIconHide: {
+  menuButton: {
+    marginRight: theme.spacing.unit,
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
@@ -26,13 +28,9 @@ const styles = theme => ({
     padding: 0,
   },
   titleLink: {
-    lineHeight: '32px',
-  },
-  titleImg: {
-    margin: 'auto',
-    verticalAlign: 'middle',
-    display: 'inline-block',
-    height: '32px',
+    display: 'flex',
+    alignItems: 'center',
+    textDecoration: 'none',
   },
 });
 
@@ -59,13 +57,20 @@ const Navbar = ({
           color="inherit"
           aria-label="Open drawer"
           onClick={handleSidebarToggle}
-          className={classes.navIconHide}
+          className={classes.menuButton}
         >
           <MenuIcon />
         </IconButton>
-        <Link to="/" className={classes.titleLink}>
-          <img src={hyperiumLargeLogo} className={classes.titleImg} />
-        </Link>
+        <Typography
+          variant="h6"
+          color="inherit"
+          component={Link}
+          to="/"
+          className={classes.titleLink}
+        >
+          <img src={hyperiumLogo} height="32" />
+          yperium
+        </Typography>
         <div className={classes.grow} />
         {children}
       </Toolbar>
