@@ -20,6 +20,15 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 const styles = theme => ({
+  card: {
+    transition: theme.transitions.create(['margin-top', 'box-shadow'], {
+      duration: theme.transitions.duration.shortest,
+    }),
+    '&:hover': {
+      marginTop: '-10px',
+      boxShadow: theme.shadows[3],
+    },
+  },
   cardActions: {
     display: 'flex',
   },
@@ -54,7 +63,7 @@ class DownloadCard extends React.Component {
     } = this.props;
     const { expanded } = this.state;
     return (
-      <Card>
+      <Card className={classes.card}>
         <CardHeader title={title} />
         <CardContent>
           <Typography>{description}</Typography>
@@ -112,6 +121,7 @@ class DownloadCard extends React.Component {
 
 DownloadCard.propTypes = {
   classes: PropTypes.shape({
+    card: PropTypes.string.isRequired,
     cardActions: PropTypes.string.isRequired,
     expand: PropTypes.string.isRequired,
     expandOpen: PropTypes.string.isRequired,
