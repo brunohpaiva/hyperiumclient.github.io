@@ -81,10 +81,10 @@ const Navbar = ({
 Navbar.propTypes = {
   classes: PropTypes.shape({
     toolbar: PropTypes.string.isRequired,
-    navIconHide: PropTypes.string.isRequired,
+    menuButton: PropTypes.string.isRequired,
     grow: PropTypes.string.isRequired,
+    containerItem: PropTypes.string.isRequired,
     titleLink: PropTypes.string.isRequired,
-    titleImg: PropTypes.string.isRequired,
   }),
   position: PropTypes.string,
   color: PropTypes.string,
