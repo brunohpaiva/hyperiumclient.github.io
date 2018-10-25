@@ -86,8 +86,9 @@ class ContributorsSection extends React.Component {
       .then(contributors => {
         const arithmeticAverage =
           sumContributions(contributors) / contributors.length;
+        const minimumContributions = arithmeticAverage * 0.8;
         const filteredContributors = contributors.filter(
-          contributor => contributor.contributions >= arithmeticAverage
+          contributor => contributor.contributions >= minimumContributions
         );
         if (!this.willUnmout) {
           this.setState({ contributors: filteredContributors });
