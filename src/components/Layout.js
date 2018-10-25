@@ -38,6 +38,15 @@ const styles = theme => ({
       paddingTop: `${theme.spacing.unit * 10}px`,
     },
   },
+  navbarButton: {
+    margin: '0 2.5px',
+    '&:first-child': {
+      marginLeft: 0,
+    },
+    '&:last-child': {
+      marginRight: 0,
+    },
+  },
 });
 
 class Layout extends React.Component {
@@ -104,21 +113,34 @@ class Layout extends React.Component {
               handleSidebarToggle={this.handleSidebarToggle}
             >
               <div className={classes.navbarMenu}>
-                <Button component={this.createLinkComponent('/#home')}>
+                <Button
+                  component={this.createLinkComponent('/#home')}
+                  className={classes.navbarButton}
+                >
                   Home
                 </Button>
-                <Button component={this.createLinkComponent('/#mods')}>
+                <Button
+                  component={this.createLinkComponent('/#mods')}
+                  className={classes.navbarButton}
+                >
                   Mods
                 </Button>
-                <Button component={this.createLinkComponent('/#features')}>
+                <Button
+                  component={this.createLinkComponent('/#features')}
+                  className={classes.navbarButton}
+                >
                   Features
                 </Button>
                 <Button
                   component={this.createLinkComponent('/#privacy-policy')}
+                  className={classes.navbarButton}
                 >
                   Privacy
                 </Button>
-                <Button component={this.createLinkComponent('/#contact')}>
+                <Button
+                  component={this.createLinkComponent('/#contact')}
+                  className={classes.navbarButton}
+                >
                   Contact
                 </Button>
                 <Button
@@ -126,6 +148,7 @@ class Layout extends React.Component {
                   color="primary"
                   component={GatsbyLink}
                   to="/downloads"
+                  className={classes.navbarButton}
                 >
                   Downloads
                 </Button>
