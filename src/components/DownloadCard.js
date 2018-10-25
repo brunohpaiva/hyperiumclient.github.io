@@ -25,7 +25,7 @@ const styles = theme => ({
       duration: theme.transitions.duration.shortest,
     }),
     '&:hover': {
-      marginTop: '-10px',
+      marginTop: '-7.5px',
       boxShadow: theme.shadows[3],
     },
   },
