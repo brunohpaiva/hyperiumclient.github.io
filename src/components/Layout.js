@@ -81,8 +81,7 @@ class Layout extends React.Component {
     }
   };
 
-  handleSidebarToggle = () =>
-    this.setState({ sidebarOpen: !this.state.sidebarOpen });
+  toggleSidebar = state => () => this.setState({ sidebarOpen: state });
 
   createLinkComponent = path => props =>
     this.props.location.pathname !== '/' ? (
@@ -155,7 +154,11 @@ class Layout extends React.Component {
               </div>
             </Navbar>
             <Hidden smUp>
-              <Sidebar open={sidebarOpen} onClose={this.handleSidebarToggle}>
+              <Sidebar
+                open={sidebarOpen}
+                onClose={this.toggleSidebar(false)}
+                onOpen={this.toggleSidebar(true)}
+              >
                 <List>
                   <ListItem
                     button

@@ -9,11 +9,12 @@ const styles = () => ({
   },
 });
 
-const Sidebar = ({ classes, children, open, onClose }) => (
+const Sidebar = ({ classes, children, open, onClose, onOpen }) => (
   <SwipeableDrawer
     variant="temporary"
     open={open}
     onClose={onClose}
+    onOpen={onOpen}
     ModalProps={{
       keepMounted: true,
     }}
@@ -32,6 +33,7 @@ Sidebar.propTypes = {
   children: PropTypes.node,
   open: PropTypes.bool,
   onClose: PropTypes.func,
+  onOpen: PropTypes.func,
 };
 
 export default withStyles(styles)(Sidebar);
