@@ -68,7 +68,7 @@ const Navbar = ({
           to="/"
           className={classes.titleLink}
         >
-          <img src={hyperiumLogo} height="32" />
+          <img src={hyperiumLogo} height="32" alt="Hyperium logo" />
           yperium
         </Typography>
         <div className={classes.grow} />

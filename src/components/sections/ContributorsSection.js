@@ -28,9 +28,9 @@ const Contributor = withStyles(contributorStyles)(
     <Card>
       <CardMedia
         component="img"
-        alt={`${contributor.login}'s github avatar'`}
+        alt={`${contributor.login}'s github avatar`}
         image={contributor.avatar_url}
-        title={`${contributor.login}'s github avatar'`}
+        title={`${contributor.login}'s github avatar`}
       />
       <CardContent>
         <Typography

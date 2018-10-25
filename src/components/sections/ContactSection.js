@@ -11,7 +11,7 @@ class ContactSection extends React.Component {
         <Grid container justify="center">
           <Grid item>
             <a href="https://hyperium.cc/discord">
-              <img src={discordLogoLarge} width="300" />
+              <img src={discordLogoLarge} width="300" alt="Discord logo" />
             </a>
           </Grid>
         </Grid>
