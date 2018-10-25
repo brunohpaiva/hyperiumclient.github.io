@@ -1,5 +1,5 @@
 import React from 'react';
-import Drawer from '@material-ui/core/Drawer';
+import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -10,7 +10,7 @@ const styles = () => ({
 });
 
 const Sidebar = ({ classes, children, open, onClose }) => (
-  <Drawer
+  <SwipeableDrawer
     variant="temporary"
     open={open}
     onClose={onClose}
@@ -22,7 +22,7 @@ const Sidebar = ({ classes, children, open, onClose }) => (
     }}
   >
     {children}
-  </Drawer>
+  </SwipeableDrawer>
 );
 
 Sidebar.propTypes = {
