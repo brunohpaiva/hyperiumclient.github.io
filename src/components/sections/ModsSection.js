@@ -122,6 +122,16 @@ const mods = [
 ];
 
 const stylesMod = theme => ({
+  root: {
+    '&:first-child': {
+      borderTopLeftRadius: theme.shape.borderRadius,
+      borderTopRightRadius: theme.shape.borderRadius,
+    },
+    '&:last-child': {
+      borderBottomLeftRadius: theme.shape.borderRadius,
+      borderBottomRightRadius: theme.shape.borderRadius,
+    },
+  },
   heading: {
     fontSize: theme.typography.pxToRem(15),
     fontWeight: theme.typography.fontWeightRegular,
@@ -129,7 +139,7 @@ const stylesMod = theme => ({
 });
 
 const ModPanel = withStyles(stylesMod)(({ classes, mod }) => (
-  <ExpansionPanel>
+  <ExpansionPanel classes={{ root: classes.root }}>
     <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
       <Typography className={classes.heading}>{mod.name}</Typography>
     </ExpansionPanelSummary>
@@ -151,6 +161,7 @@ const ModPanel = withStyles(stylesMod)(({ classes, mod }) => (
 
 ModPanel.propTypes = {
   classes: PropTypes.shape({
+    root: PropTypes.string.isRequired,
     heading: PropTypes.string.isRequired,
   }),
   mod: PropTypes.shape({
