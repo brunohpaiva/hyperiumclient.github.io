@@ -206,6 +206,8 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
   classes: PropTypes.shape({
     navbarMenu: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired,
+    navbarButton: PropTypes.string.isRequired,
   }),
   location: PropTypes.shape({
     pathname: PropTypes.string.isRequired,
