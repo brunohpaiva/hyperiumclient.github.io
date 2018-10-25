@@ -29,7 +29,6 @@ const Contributor = withStyles(contributorStyles)(
       <CardMedia
         component="img"
         alt={`${contributor.login}'s github avatar'`}
-        height="140"
         image={contributor.avatar_url}
         title={`${contributor.login}'s github avatar'`}
       />
