@@ -109,7 +109,7 @@ class Layout extends React.Component {
             <Navbar
               position="fixed"
               toolbarVariant={toolbarVariant}
-              handleSidebarToggle={this.handleSidebarToggle}
+              handleSidebarToggle={this.toggleSidebar(!sidebarOpen)}
             >
               <div className={classes.navbarMenu}>
                 <Button
