@@ -1,55 +1,23 @@
-nav div.collapse.navbar-collapse ul.navbar-nav li a.active {
-  font-weight: 500;
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
-nav div.collapse.navbar-collapse ul.navbar-nav li a.btn.btn-downloads {
-  font-weight: 500;
-  color: #007bff;
-  border-color: #007bff;
+div.top-app-bar__buttons {
+  margin-left: 10px;
 }
 
-nav div.collapse.navbar-collapse ul.navbar-nav li a.btn.btn-downloads.active {
-  color: white;
-  background-color: #007bff;
+div.top-app-bar__buttons a.mdc-button:not(:first-child) {
+  margin-left: 5px;
 }
 
-nav div.collapse.navbar-collapse ul.navbar-nav li a.btn.btn-downloads:hover {
-  color: white;
-  background-color: #007bff;
+@media screen and (max-width: 839px) {
+  div.top-app-bar__buttons {
+    display: none;
+  }
 }
 
-header {
-  background-color: gray;
-  background-image: url("../images/mc-cinematic-blured.png");
-  background-size: cover;
-  background-attachment: scroll;
-  position: relative;
-}
-
-header.full-height {
-  height: 100vh;
-}
-
-header img {
-  max-width: 250px;
-  max-height: 250px;
-}
-
-header div.scroll-down {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-}
-
-header div.scroll-down a {
-  transition: all 0.5s;
-}
-
-header div.scroll-down a:hover {
-  opacity: 0.5;
-}
-
-section {
-  padding: 50px 0 25px 0;
+:root {
+  --mdc-theme-primary: #2196f3;
+  --mdc-theme-secondary: #3f51b5;
 }

@@ -12,37 +12,33 @@ function fetchJson(url, callback) {
       }
     }
   };
-  httpRequest.open('GET', url);
+  httpRequest.open("GET", url);
   httpRequest.send();
 }
 
-$(function() {
-  $('a[data-scroll-to="true"]').click(function(event) {
-    event.preventDefault();
-    const element = $(this);
-    const targetId = element.attr("href");
-    const targetElement = $(targetId);
-    //From: https://stackoverflow.com/a/39494245
-    var startingY = window.pageYOffset;
-    var diff = (targetElement.offset().top - 25) - startingY;
-    var start;
-    window.requestAnimationFrame(function step(timestamp) {
-      if (!start)
-        start = timestamp;
-      var time = timestamp - start;
-      var percent = Math.min(time / 300, 1);
-      window.scrollTo(0, startingY + diff * percent);
-      if (time < 300) {
-        window.requestAnimationFrame(step);
-      }
-    });
+(function() {
+  const topAppBar = new mdc.topAppBar.MDCTopAppBar(
+    document.querySelector(".mdc-top-app-bar")
+  );
+  const drawer = mdc.drawer.MDCDrawer.attachTo(
+    document.querySelector(".mdc-drawer")
+  );
+
+  drawer.foundation_.handleScrimClick = () => {
+    drawer.open = !drawer.open;
+  };
+  topAppBar.listen("MDCTopAppBar:nav", () => {
+    drawer.open = !drawer.open;
   });
 
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-      console.log('SW: working with scope ', registration.scope);
-    }).catch(function(err) {
-      console.log('SW: registration failed ', err);
-    });
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(function(registration) {
+        console.log("SW: working with scope ", registration.scope);
+      })
+      .catch(function(err) {
+        console.log("SW: registration failed ", err);
+      });
   }
-});
+})();
