@@ -61,17 +61,21 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
     <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
       rel="stylesheet"
-      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
     />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"
+    />
     <link rel="stylesheet" href="/css/main.css" />
   </head>
 
-  <body>
+  <body class="mdc-typography">
     <header class="mdc-top-app-bar">
       <div class="mdc-top-app-bar__row">
         <section
@@ -100,10 +104,26 @@
           <a
             href="#"
             class="material-icons mdc-top-app-bar__action-item"
-            aria-label="Bookmark this page"
-            alt="Bookmark this page"
+            aria-label="GitHub"
+            alt="GitHub"
           >
-            <img src="/images/GitHub-Mark-Light-32px.png" width="24" />
+            <img src="/images/github.png" width="24" />
+          </a>
+          <a
+            href="#"
+            class="material-icons mdc-top-app-bar__action-item"
+            aria-label="Twitter"
+            alt="Twitter"
+          >
+            <img src="/images/twitter.png" width="24" />
+          </a>
+          <a
+            href="#"
+            class="material-icons mdc-top-app-bar__action-item"
+            aria-label="Discord"
+            alt="Discord"
+          >
+            <img src="/images/discord-small.png" width="24" />
           </a>
         </section>
       </div>
@@ -151,6 +171,30 @@
     </aside>
 
     <div class="mdc-drawer-scrim"></div>
+
+    <div class="mdc-top-app-bar--fixed-adjust">
+      <div id="home" class="main-title-container">
+        <div class="mdc-layout-grid">
+          <div class="mdc-layout-grid__inner">
+            <div
+              class="mdc-layout-grid__cell mdc-layout-grid__cell--span-4-desktop mdc-layout-grid__cell--span-12-phone mdc-layout-grid__cell--span-12-tablet"
+            >
+              <h1
+                class="mdc-typography--headline2 mdc-theme--text-primary-on-dark"
+              >
+                Hyperium
+              </h1>
+              <span
+                class="mdc-typography--body1 mdc-theme--text-primary-on-dark"
+              >
+                Free and Open-source Minecraft Client with HUDs and other
+                popular mods
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>

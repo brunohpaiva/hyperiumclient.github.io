@@ -11,9 +11,38 @@ div.top-app-bar__buttons a.mdc-button:not(:first-child) {
   margin-left: 5px;
 }
 
-@media screen and (max-width: 839px) {
+@media screen and (max-width: 959px) {
   div.top-app-bar__buttons {
     display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  a.mdc-top-app-bar__navigation-icon {
+    display: none;
+  }
+}
+
+div.main-title-container {
+  background-image: url('/images/mc-cinematic-blured.png');
+  background-attachment: fixed;
+  background-position-y: -140px;
+}
+
+div.main-title-container div.mdc-layout-grid div.mdc-layout-grid__inner div.mdc-layout-grid__cell {
+  text-align: center;
+}
+
+div.main-title-container div.mdc-layout-grid div.mdc-layout-grid__inner div.mdc-layout-grid__cell h1 {
+  margin: 0 0 20px;
+}
+
+@media screen and (min-width: 840px) {
+  div.main-title-container div.mdc-layout-grid {
+    padding: 40px;
+  }
+  div.main-title-container div.mdc-layout-grid div.mdc-layout-grid__inner div.mdc-layout-grid__cell {
+    grid-column-start: 5;
   }
 }
 
