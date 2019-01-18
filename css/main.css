@@ -1,6 +1,14 @@
+:root {
+  --mdc-theme-primary: #2196f3;
+  --mdc-theme-secondary: #3f51b5;
+  --mdc-theme-background: #fafafa;
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #fff;
+  background-color: var(--mdc-theme-background, #fff);
 }
 
 div.top-app-bar__buttons {
@@ -89,9 +97,8 @@ hr {
   grid-column-end: span 8;
 }
 
-:root {
-  --mdc-theme-primary: #2196f3;
-  --mdc-theme-secondary: #3f51b5;
+footer {
+  background-color: #fff;
 }
 
 @media screen and (min-width: 480px) {
