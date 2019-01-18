@@ -5,10 +5,9 @@ function fetchJson(url, callback) {
   httpRequest.onreadystatechange = function() {
     if (httpRequest.readyState === 4) {
       if (httpRequest.status === 200) {
-        var data = JSON.parse(httpRequest.responseText);
-        if (callback) {
-          callback(data);
-        }
+        callback(JSON.parse(httpRequest.responseText));
+      } else {
+        callback(undefined, new Error(httpRequest.statusText));
       }
     }
   };
@@ -19,7 +18,9 @@ function fetchJson(url, callback) {
 (function() {
   document
     .querySelectorAll(".mdc-button, .mdc-list-item")
-    .forEach(el => new mdc.ripple.MDCRipple(el));
+    .forEach(function(el) {
+      new mdc.ripple.MDCRipple(el);
+    });
   const topAppBar = new mdc.topAppBar.MDCTopAppBar(
     document.querySelector(".mdc-top-app-bar")
   );
@@ -27,10 +28,10 @@ function fetchJson(url, callback) {
     document.querySelector(".mdc-drawer")
   );
 
-  drawer.foundation_.handleScrimClick = () => {
+  drawer.foundation_.handleScrimClick = function() {
     drawer.open = !drawer.open;
   };
-  topAppBar.listen("MDCTopAppBar:nav", () => {
+  topAppBar.listen("MDCTopAppBar:nav", function() {
     drawer.open = !drawer.open;
   });
 
