@@ -17,6 +17,9 @@ function fetchJson(url, callback) {
 }
 
 (function() {
+  document
+    .querySelectorAll(".mdc-button, .mdc-list-item")
+    .forEach(el => new mdc.ripple.MDCRipple(el));
   const topAppBar = new mdc.topAppBar.MDCTopAppBar(
     document.querySelector(".mdc-top-app-bar")
   );
