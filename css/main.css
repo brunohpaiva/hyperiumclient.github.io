@@ -52,7 +52,7 @@ div.mdc-card div.hyperium-card__secondary {
 ul.mods-list {
   -webkit-column-count: 2;
   column-count: 2;
-  -webkit-column-gap: 16px;
+  -webkit-column-gap: 1rem;
   column-gap: 16px;
   max-width: 100%;
 }
@@ -113,9 +113,6 @@ hr {
   .container-cell > .mdc-layout-grid__inner > .mdc-layout-grid__cell {
     grid-column-end: span 6;
   }
-}
-
-@media screen and (min-width: 840px) and (max-width: 959px) {
   ul.mods-list {
     -webkit-column-count: 4;
     column-count: 4;
@@ -131,20 +128,6 @@ hr {
 @media screen and (min-width: 960px) {
   a.mdc-top-app-bar__navigation-icon {
     display: none;
-  }
-}
-
-@media screen and (min-width: 960px) and (max-width: 1023px) {
-  ul.mods-list {
-    -webkit-column-count: 5;
-    column-count: 5;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  ul.mods-list {
-    -webkit-column-count: 6;
-    column-count: 6;
   }
 }
 
