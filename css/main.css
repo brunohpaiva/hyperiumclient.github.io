@@ -15,6 +15,7 @@ div.main-title-container {
   background-image: url('/images/mc-cinematic-blured.png');
   background-attachment: fixed;
   background-position-y: -140px;
+  background-size: cover;
 }
 
 div.main-title-container div.mdc-layout-grid__cell {
